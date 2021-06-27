@@ -1,3 +1,4 @@
+import { Exclude } from "class-transformer";
 import {Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from "typeorm";
 import { v4 as uuid } from "uuid" // v4 => Números aleatórios.
 
@@ -11,6 +12,7 @@ class User {
   email: string;
   @Column()
   admin: boolean;
+  @Exclude()
   @Column()
   password: string;
   @CreateDateColumn()
