@@ -57,3 +57,9 @@ Services like Use cases
 => O usuário precisa estar autenticado na aplicação
 
 Controller -> Service (throw new Error)
+
+Uso do JWT (JSON Web Tokens) no projeto => Token para garantir as rotas que precisam ser autenticadas.
+
+Para encriptar as senhas foi usada a biblioteca ==> bcryptjs e o @type/bcryptjs
+
+Sempre que uma função retornar uma promisse, ela precisa de um "await"
