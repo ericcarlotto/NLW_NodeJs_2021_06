@@ -63,3 +63,32 @@ Uso do JWT (JSON Web Tokens) no projeto => Token para garantir as rotas que prec
 Para encriptar as senhas foi usada a biblioteca ==> bcryptjs e o @type/bcryptjs
 
 Sempre que uma função retornar uma promisse, ela precisa de um "await"
+
+Utilizado no projeto a estratégia de Bearer Token.
+
+Sobrescrevendo um método da biblioteca Express
+para adicionar o user_id: string;
+
+declare namespace Express {
+export interface Request {
+
+}
+}
+
+Foi necessário criar uma interface para usar o sub como string
+e também modificar no tsconfig :
+"typeRoots": ["./src/@types"], /_ List of folders to include type definitions from. _/
+
+Todo service tem => um controller que tem => uma rota
+
+import { Exclude } from "class-transformer"; ==> Usado para não mostrar as senhas ao buscar usuários
+
+Milhas extras:
+
+Enviar email para quem recebeu elogio
+Colocar em produção (Heroku)
+Frontend (CORS) e (@types/cors -D) => precisa do import cors from "cors"; e app.use(cors());
+Design Patterns / meio feito
+Criar erros customizáveis
+Usar o Postgrees ao invés do sqlite
+Outros tipos de buscas
